@@ -29,26 +29,25 @@ criarPost({owner:'Gabbie', content: 'Segundo Tweet'});
 console.log(miniTwitter.posts)
 
 //read
-function pegaPosts(){
+function readPost(){
     return miniTwitter.posts
 }
-console.log(pegaPoasts())
 
-//update
+//update se me der o id correto eu atualizo
 function AtualizaContentPost(id,novoConteudo){
-  const postQueVaiSerAtualizado =  pegaPosts().find((post)=> {
+  const postQueVaiSerAtualizado =  readPost().find((post)=> {
         return post.id === id;
 
     })
-    console.log(pegaPosts())
+    console.log(readPost())
 }
 
 AtualizaContentPost(1,'novo content')
 
-//delete
+//delete Cria uma lista sem o Post do id dado
 
 function apagaPost(id) {
-    const  ListaPostsAtualizada = pegaPosts().filter((postAtual) => {
+    const  ListaPostsAtualizada = readPost().filter((postAtual) => {
         return postAtual.id !== id;
     })
     miniTwitter.posts = ListaPostsAtualizada;
