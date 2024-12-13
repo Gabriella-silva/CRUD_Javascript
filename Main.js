@@ -29,17 +29,28 @@ criarPost({owner:'Gabbie', content: 'Segundo Tweet'});
 console.log(miniTwitter.posts)
 
 //read
-function pegaPost(){
+function pegaPosts(){
     return miniTwitter.posts
 }
-console.log(pegaPoast())
+console.log(pegaPoasts())
 
 //update
 function AtualizaContentPost(id,novoConteudo){
-    pegaPost().find((post)=> {
+  const postQueVaiSerAtualizado =  pegaPosts().find((post)=> {
+        return post.id === id;
 
-        
     })
+    console.log(pegaPosts())
 }
 
-AtualizaContentPost('novo content')
+AtualizaContentPost(1,'novo content')
+
+//delete
+
+function apagaPost(id) {
+    const  ListaPostsAtualizada = pegaPosts().filter((postAtual) => {
+        return postAtual.id !== id;
+    })
+    miniTwitter.posts = ListaPostsAtualizada;
+}
+apagaPost(1)
