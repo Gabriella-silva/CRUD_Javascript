@@ -1,4 +1,9 @@
-//O que o twitter tem?
+//Banco de dados em CONST
+
+//readPost: mostrar post
+//criarPost: cria um Post
+//apagaPost
+//atualizaContentPost
 
 const miniTwitter = {
     users:[
