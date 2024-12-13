@@ -6,7 +6,9 @@ const miniTwitter = {
     ],
 
     posts:[
-        { owner:'Gabbie', 
+        { 
+            id:1 ,
+            owner:'Gabbie', 
           content: 'Hello World'
         }
     ]
@@ -14,7 +16,9 @@ const miniTwitter = {
 
 //CREATE
 function criarPost(dados) {
+    
     miniTwitter.posts.push({
+    id: miniTwitter.posts.length + 1,
     owner:dados.owner,
     content:dados.content
 });
@@ -22,4 +26,20 @@ function criarPost(dados) {
 
 criarPost({owner:'Gabbie', content: 'Segundo Tweet'});
 
-console.log(miniTwitter.posts) [ {owner: 'Gabbie', }]
+console.log(miniTwitter.posts)
+
+//read
+function pegaPost(){
+    return miniTwitter.posts
+}
+console.log(pegaPoast())
+
+//update
+function AtualizaContentPost(id,novoConteudo){
+    pegaPost().find((post)=> {
+
+        
+    })
+}
+
+AtualizaContentPost('novo content')
